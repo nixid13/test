@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {AbstractControl, FormGroup} from '@angular/forms';
 
 @Component({
@@ -6,7 +6,7 @@ import {AbstractControl, FormGroup} from '@angular/forms';
   templateUrl: './rules-controls.component.html',
   styleUrls: ['./rules-controls.component.scss']
 })
-export class RulesControlsComponent implements OnInit {
+export class RulesControlsComponent {
   @Input() public rules: AbstractControl[];
   @Output() public deleteRule: EventEmitter<number> = new EventEmitter<number>();
   public optionTypes: string[] = ['Contains', 'Exact Match'];
@@ -14,8 +14,6 @@ export class RulesControlsComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
-  }
 
   public onDeleteRule(index: number): void {
     this.deleteRule.emit(index);
