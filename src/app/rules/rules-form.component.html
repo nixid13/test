@@ -1,8 +1,6 @@
 <form class="rules-form" [formGroup]="rulesForm">
-  <div class="display-rules-container">
-
+  <div class="rules-controls-container">
     <h4>Where would you like to display your campaign?</h4>
-
     <app-rules-controls
       formArrayName="displayRules"
       (deleteRule)="onRuleDelete($event, rulesEnum.DisplayRules)"
@@ -20,7 +18,7 @@
   </div>
 
 
-  <div class="exclusion-rules-container">
+  <div class="rules-controls-container">
     <h4>Exclusion rules</h4>
     <app-rules-controls
       formArrayName="exclusionRules"
