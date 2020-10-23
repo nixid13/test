@@ -1,0 +1,35 @@
+@import "../style/variables";
+
+.rules-form {
+
+}
+.display-rules-container,
+.exclusion-rules-container
+{
+  margin-top: 20px;
+}
+
+.rules-form__add-rule {
+  margin-top: 20px;
+  padding: 10px 24px;
+  border: 2px solid $app-gray;
+  border-radius: 4px;
+  background: transparent;
+  font-weight: bold;
+  line-height: 16px;
+  font-family: $app-font;
+  font-size: 14px;
+
+  &::before {
+    content: '+';
+    display: inline-block;
+    font-size: 16px;
+    line-height: 0;
+    color: $app-font-color;
+
+  }
+  &:hover {
+    cursor: pointer;
+    background-color:$app-gray;
+  }
+}

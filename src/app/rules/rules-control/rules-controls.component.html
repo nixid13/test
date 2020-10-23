@@ -1,0 +1,29 @@
+
+<div class="rule" *ngFor="let rule of rules; let i = index">
+<p class="rule__label">Type a full or partial url where you would like to display notifications</p>
+
+  <div class="rule-container" [formGroup]="rule">
+    <div class="rule-type">
+      <select
+        class="rule-type__select"
+        (change)="changeType($event, i)"
+        formControlName="type" >
+        <option *ngFor="let type of optionTypes">{{ type }}</option>
+      </select>
+    </div>
+
+  <div class="rule-url">
+    <input
+      [ngClass]="{'rule-url__input_error': rule.controls.url?.errors}"
+      placeholder="Display URL"
+      class="rule-url__input"
+      formControlName="url"
+      type="text">
+    <span class="rule-url__message" *ngIf="rule.controls.url?.errors">URL is missing</span>
+  </div>
+
+  <span class="rule-delete" (click)="onDeleteRule(i)">&#x2613;</span>
+
+</div>
+
+</div>

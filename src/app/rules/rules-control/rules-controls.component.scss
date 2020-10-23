@@ -1,0 +1,75 @@
+@import "../../style/variables";
+
+.rule {
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 4px 0 rgba(204, 204, 204, 0.4);
+
+  &__label {
+    font-size: 14px;
+    color: $app-font-color;
+  }
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: 15px;
+  }
+
+  &-type__select,
+  &-url__input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid $app-gray;
+    border-radius: 4px;
+
+    &::placeholder {
+      font-family: $app-font;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-type {
+    width: 30%;
+  }
+
+  &-url {
+    width: 60%;
+
+    &__input {
+      padding-left: 10px;
+
+
+    }
+
+    &__message {
+      display: inline-block;
+      width: 100%;
+      border: 1px transparent;
+      border-radius: 4px;
+      color: red;
+      padding: 6px 6px 6px 10px;
+      font-size: 12px;
+      background-color: $app-gray;
+    }
+  }
+
+
+  &-delete {
+    position: relative;
+    bottom: 50px;
+    left: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .rule-url__input_error {
+    border-color: red;
+  }
+}

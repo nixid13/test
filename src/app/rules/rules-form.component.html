@@ -1,0 +1,40 @@
+<form class="rules-form" [formGroup]="rulesForm">
+  <div class="display-rules-container">
+
+    <h4>Where would you like to display your campaign?</h4>
+
+    <app-rules-controls
+      formArrayName="displayRules"
+      (deleteRule)="onRuleDelete($event, rulesEnum.DisplayRules)"
+      [rules]="getFormArray(rulesEnum.DisplayRules).controls"
+    ></app-rules-controls>
+
+    <button
+      class="rules-form__add-rule"
+      *ngIf="isButtonEnabled(rulesEnum.DisplayRules)"
+      type="button"
+      (click)="addRuleFormGroup(rulesEnum.DisplayRules)"
+    >
+     NEW RULE
+    </button>
+  </div>
+
+
+  <div class="exclusion-rules-container">
+    <h4>Exclusion rules</h4>
+    <app-rules-controls
+      formArrayName="exclusionRules"
+      (deleteRule)="onRuleDelete($event, rulesEnum.ExclusionRules)"
+      [rules]="getFormArray(rulesEnum.ExclusionRules).controls"
+    ></app-rules-controls>
+
+    <button
+      class="rules-form__add-rule"
+      *ngIf="isButtonEnabled(rulesEnum.ExclusionRules)"
+      type="button"
+      (click)="addRuleFormGroup(rulesEnum.ExclusionRules)"
+    >
+     NEW RULE
+    </button>
+  </div>
+</form>
