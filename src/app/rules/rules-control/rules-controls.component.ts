@@ -11,17 +11,22 @@ export class RulesControlsComponent implements OnInit {
   @Output() public deleteRule: EventEmitter<number> = new EventEmitter<number>();
   public optionTypes: string[] = ['Contains', 'Exact Match'];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
- public onDeleteRule(index: number): void {
+  public onDeleteRule(index: number): void {
     this.deleteRule.emit(index);
   }
 
   public changeType(event: Event, index): void {
     const selectValue = (event.target as HTMLSelectElement).value;
     (this.rules[index] as FormGroup).controls.type.setValue(selectValue);
+  }
+
+  public getUrlInputErrors(rule: AbstractControl): boolean {
+    return !!(rule as FormGroup).controls.url.errors;
   }
 }

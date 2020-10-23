@@ -1,4 +1,3 @@
-
 <div class="rule" *ngFor="let rule of rules; let i = index">
 <p class="rule__label">Type a full or partial url where you would like to display notifications</p>
 
@@ -14,12 +13,12 @@
 
   <div class="rule-url">
     <input
-      [ngClass]="{'rule-url__input_error': rule.controls.url?.errors}"
+      [ngClass]="{'rule-url__input_error': getUrlInputErrors(rule)}"
       placeholder="Display URL"
       class="rule-url__input"
       formControlName="url"
       type="text">
-    <span class="rule-url__message" *ngIf="rule.controls.url?.errors">URL is missing</span>
+    <span class="rule-url__message" *ngIf="getUrlInputErrors(rule)">URL is missing</span>
   </div>
 
   <span class="rule-delete" (click)="onDeleteRule(i)">&#x2613;</span>

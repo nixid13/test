@@ -51,7 +51,7 @@
       width: 100%;
       border: 1px transparent;
       border-radius: 4px;
-      color: red;
+      color: #cd2c2c;
       padding: 6px 6px 6px 10px;
       font-size: 12px;
       background-color: $app-gray;
@@ -70,6 +70,6 @@
   }
 
   .rule-url__input_error {
-    border-color: red;
+    border-color: #cd2c2c;
   }
 }
