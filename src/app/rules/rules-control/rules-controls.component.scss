@@ -62,13 +62,16 @@
     position: relative;
     bottom: 50px;
     left: 10px;
-
+    font-size: 18px;
+    color: #000;
+    transition: 0.3s;
     &:hover {
       cursor: pointer;
+      color: $app-red;
     }
   }
 
   .rule-url__input_error {
-    border-color: #cd2c2c;
+    border-color: $app-red;
   }
 }
