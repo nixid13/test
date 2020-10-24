@@ -13,12 +13,16 @@
 
   <div class="rule-url">
     <input
-      [ngClass]="{'rule-url__input_error': getUrlInputErrors(rule)}"
+      [ngClass]="{'rule-url__input_error': getUrlInputErrors(rule) && rule.touched}"
       placeholder="Display URL"
       class="rule-url__input"
       formControlName="url"
       type="text">
-    <span class="rule-url__message" *ngIf="getUrlInputErrors(rule)">URL is missing</span>
+    <span
+      *ngIf="getUrlInputErrors(rule) && rule.touched"
+      @animateError
+      class="rule-url__message"
+    >URL is missing</span>
   </div>
 
   <span class="rule-delete" (click)="onDeleteRule(i)">&#x2613;</span>

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import {RulesFormComponent} from './rules-form.component';
 import {RulesControlsComponent} from './rules-control/rules-controls.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {RulesControlsComponent} from './rules-control/rules-controls.component';
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ]
 })
 export class RulesFormModule { }

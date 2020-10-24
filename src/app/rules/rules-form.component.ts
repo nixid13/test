@@ -11,6 +11,15 @@ export class RulesFormComponent implements OnInit {
 
   public rulesForm: FormGroup;
   public rulesEnum = RulesEnum;
+  public rulesArray = [
+    {
+      ruleFormName: this.rulesEnum.DisplayRules,
+      ruleHeader: 'Where would you like to display your campaign?'
+    }, {
+      ruleFormName: this.rulesEnum.ExclusionRules,
+      ruleHeader: 'Exclusion rules'
+    }
+   ];
 
   constructor() {
   }
@@ -42,13 +51,5 @@ export class RulesFormComponent implements OnInit {
 
   public getFormArray(formName: string): FormArray {
     return (this.rulesForm.get(formName) as FormArray);
-  }
-
-  public isButtonEnabled(formName: string): boolean {
-    const formArray = this.getFormArray(formName).controls;
-    if (formArray.length) {
-      return formArray.every((formGroup: FormGroup) => !formGroup.controls.url.errors);
-    }
-    return true;
   }
 }

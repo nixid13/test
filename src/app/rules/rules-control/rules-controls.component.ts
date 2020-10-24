@@ -1,10 +1,19 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {AbstractControl, FormGroup} from '@angular/forms';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-rules-controls',
   templateUrl: './rules-controls.component.html',
-  styleUrls: ['./rules-controls.component.scss']
+  styleUrls: ['./rules-controls.component.scss'],
+  animations: [
+    trigger('animateError', [
+    transition('void => *', [
+      style({opacity: 0}),
+      animate('0.5s', style({opacity: 1}))
+    ]),
+    transition('* => void', [animate('0.5s', style({opacity: 0}))])
+  ])]
 })
 export class RulesControlsComponent {
   @Input() public rules: AbstractControl[];
