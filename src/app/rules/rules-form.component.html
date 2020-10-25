@@ -2,7 +2,7 @@
   <div class="rules-controls-container" *ngFor="let rule of rulesArray">
     <h4>{{ rule.ruleHeader }}</h4>
     <app-rules-controls
-      formArrayName="displayRules"
+      [formArrayName]="rule.ruleFormName"
       (deleteRule)="onRuleDelete($event, rule.ruleFormName)"
       [rules]="getFormArray(rule.ruleFormName).controls"
     ></app-rules-controls>
