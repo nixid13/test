@@ -60,14 +60,12 @@
 
   &-delete {
     position: relative;
-    bottom: 50px;
+    bottom: 40px;
     left: 10px;
-    font-size: 18px;
-    color: #000;
-    transition: 0.3s;
+    width: 20px;
+
     &:hover {
       cursor: pointer;
-      color: $app-red;
     }
   }
 
